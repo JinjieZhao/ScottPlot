@@ -31,7 +31,7 @@ public class WpfPlotMenu : IPlotMenu
 
         ContextMenuItem copyImage = new()
         {
-            Label = "Copy to Clipboard",
+            Label = "复制图像到剪贴板",
             OnInvoke = CopyImageToClipboard
         };
 
@@ -43,9 +43,7 @@ public class WpfPlotMenu : IPlotMenu
 
         return new ContextMenuItem[]
         {
-            saveImage,
             copyImage,
-            newWindow,
         };
     }
 
