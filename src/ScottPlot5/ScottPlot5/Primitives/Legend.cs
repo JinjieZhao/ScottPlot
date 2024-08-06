@@ -1,4 +1,6 @@
-﻿namespace ScottPlot;
+﻿using ScottPlot.Plottables;
+
+namespace ScottPlot;
 
 public class Legend(Plot plot) : IPlottable, IHasOutline, IHasBackground, IHasShadow
 {
@@ -124,6 +126,7 @@ public class Legend(Plot plot) : IPlottable, IHasOutline, IHasBackground, IHasSh
         {
             var plottableLegendItems = Plot.PlottableList
                         .Where(item => item.IsVisible)
+                        .Where(item => item is not VerticalLine)
                         .SelectMany(x => x.LegendItems)
                         .Where(x => !string.IsNullOrEmpty(x.LabelText));
 
